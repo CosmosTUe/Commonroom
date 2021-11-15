@@ -1,0 +1,162 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+:root {
+    --link-blue: #0d6efd;
+    --link-blue-hover: #67a4ff;
+    --blue: #005274;
+    --blue-hover: #0e6e9e;
+    --black: #454545;
+    --white: #ffffff;
+    --light-blue: #f5faff;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: "Open Sans", sans-serif;
+    color: var(--black);
+    background: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", sans-serif;
+}
+
+p {
+    margin-top: 2em;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-blue);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--link-blue-hover);
+}
+
+.bg-cosmos-primary {
+    background-color: var(--blue)!important;
+}
+
+.btn-cosmos-primary {
+    color: var(--white);
+    background-color: var(--blue)!important;
+}
+
+.btn-cosmos-primary:hover {
+    color: var(--white);
+    background-color: var(--blue-hover)!important;
+}
+
+.btn-cosmos-outline-primary {
+    color: var(--blue);
+    border-color: var(--blue);
+}
+
+.btn-cosmos-outline-primary:hover {
+    color: var(--white);
+    background-color: var(--blue);
+    border-color: var(--blue);
+}
+
+.btn-over-stretched {
+    z-index: 2;
+    position: relative;
+}
+
+.home-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 17rem 0;
+    background-image: linear-gradient(180deg, rgba(22, 22, 22, .3), rgba(22, 22, 22, .7) 75%, #161616), url(../img/members_2017.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    display: block;
+}
+
+.home-img img {
+    height: 400px;
+}
+
+.navbar-filler {
+    height: 6rem;
+}
+
+.footer-filler {
+    height: 2rem;
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    color: #124265;
+}
+
+.stat-box span {
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 700;
+    display: block;
+}
+
+.section-bg {
+    background-color: var(--light-blue);
+}
+
+footer img {
+    max-height: 200px;
+}
+
+footer .social-links a:hover {
+    background: var(--blue-hover);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.social-links a {
+    font-size: 18px;
+    display: inline-block;
+    color: var(--white);
+    background: var(--blue);
+    line-height: 1;
+    padding: 8px 0 6px 0;
+    margin-right: 4px;
+    border-radius: 5px;
+    width: 36px;
+    height: 36px;
+}
+
+
+/* unfuck raleway font numbers when used in title as is the case with error views 
+https://www.codesmite.com/article/fixing-raleway-and-similar-fonts-numerals */
+
+.raleway-number-title {
+    -webkit-font-feature-settings: "lnum";
+    -moz-font-feature-settings: "lnum";
+    font-feature-settings: "lnum";
+}

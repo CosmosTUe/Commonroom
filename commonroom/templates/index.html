@@ -1,58 +1,63 @@
+{% extends "subpage.html" %}
+
 {% load static %}
 
-<html>
-<head>
-    {# Page title on the browser #}
-    <title>{% block title %} Commonroom {% endblock title %}</title>
-    {#Favicon for browser tab #}
-    <link rel="shortcut icon" type="image/png" href="{% static 'commonroom/img/favicon.ico' %}"/>
+{% block js %}
+<script>
 
-    {# Bootstrap CSS #}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    {# Bootstrap icons #}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.js'></script>
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.css" rel="stylesheet" crossorigin="anonymous">
-    <script>
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            googleCalendarApiKey: "AIzaSyDmW8ZeKftNzgpFFk38vPNLLJworRO8Gsw",
-            eventDidMount: function(info) {
-                console.log("test");
-                info.el.setAttribute("data-bs-toggle", "tooltip");
-                info.el.setAttribute("title", info.event.extendedProps.description);
-                var tooltip = new bootstrap.Tooltip(info.el);
-            },
-            events: {
-                googleCalendarId: "hd458sm7s84ckrk57r9q38i52g@group.calendar.google.com",
-                className: 'gcal-event',
-            },
-        });
-        calendar.render();
+document.addEventListener('DOMContentLoaded', function () {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        googleCalendarApiKey: "AIzaSyDmW8ZeKftNzgpFFk38vPNLLJworRO8Gsw",
+        eventDidMount: function(info) {
+            console.log("test");
+            info.el.setAttribute("data-bs-toggle", "tooltip");
+            info.el.setAttribute("title", info.event.extendedProps.description);
+            var tooltip = new bootstrap.Tooltip(info.el);
+        },
+        events: {
+            googleCalendarId: "hd458sm7s84ckrk57r9q38i52g@group.calendar.google.com",
+            className: 'gcal-event',
+        },
     });
+    calendar.render();
+});
     </script>
+{% endblock js %}
 
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-</head>
-<body class="d-flex flex-column min-vh-100">
-
-
-  <div class="wrapper">
-      {# Content #}
-      <div id='calendar'></div>
-  </div>
-
-</body>
-</html>
+{% block content %}
+<div class="container">
+    <div class="w-75 mx-auto">
+        <section id="section-about" class="section-bg py-5">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+            </p>
+        </section>
+        <section id="section-reservation" class="py-5">
+            <div class="section-title">
+                <h2>Reservation</h2>
+            </div>
+            <p>
+                The Common Room can be booked by any association for students that wants to host an event.
+                Events can make use of our facilities, such as a beamer, dining tables and a kitchen.
+                To make sure we can facilitate everything we only accept reservation requests made 7 days in advance.
+            </p>
+            <p>
+                For reservation of the Common Room, you can fill in the <a href="https://docs.google.com/forms/d/e/1FAIpQLScJFHVDcovtEafj6c9jOD2KlxyEhYOiOSAIgMtAJdZsGgG8Rw/viewform?usp=sf_link">reservation form</a>.
+                Please make sure to have read the <a href="{% static 'commonroom/pdf/Common Room Regulations Externals.pdf' %}">Common Room regulations</a> before submitting your form.
+                Know that the Common Room is kept open by volunteers and we may not be able to keep the room open at all times!
+            </p>
+        </section>
+        <section id="section-calendar" class="section-bg py-5">
+            <div class="section-title">
+                <h2>Calendar</h2>
+            </div>
+            <div id="calendar"></div>
+        </section>
+    </div>
+</div>
+{% endblock content %}

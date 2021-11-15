@@ -1,0 +1,25 @@
+{% load static %}
+  <nav class="navbar navbar-expand-md navbar-dark bg-cosmos-primary fixed-top">
+    <div class="container">
+      {# Logo #}
+      <a class="navbar-brand" href="/">
+        <img src="{% static 'cosmos/img/cosmos_white_horizontal.png' %}" alt="" width="auto" height="45rem">
+      </a>
+
+      {# Button for collapsing navbar on small screens #}
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      {# Collapsable navbar div #}
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        {# Navigation items #}
+        <div class="navbar-nav">
+          <a class="nav-link" href="#section-about">About Us</a>
+          <a class="nav-link" href="#section-reservation">Reservation</a>
+          <a class="nav-link" href="#section-calendar">Calendar</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
