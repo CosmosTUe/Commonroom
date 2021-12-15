@@ -8,13 +8,16 @@
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
+        //initialView: 'dayGridMonth',
+        initialView: document.documentElement.clientWidth < 765 ? 'listMonth' : 'dayGridMonth',
+        aspectRatio: document.documentElement.clientWidth < 765 ? 0.8 : 1.35,
+        //defaultView: $(window).width() < 765 ? 'basicDay':'agendaWeek',
         googleCalendarApiKey: "AIzaSyDmW8ZeKftNzgpFFk38vPNLLJworRO8Gsw",
         eventDidMount: function(info) {
             console.log("test");
             info.el.setAttribute("data-bs-toggle", "tooltip");
             info.el.setAttribute("title", info.event.extendedProps.description);
-            var tooltip = new bootstrap.Tooltip(info.el);
+            var tooltip = new bootstrap.Tooltip(info.el, {html: true});
         },
         events: {
             googleCalendarId: "c_nhgcso8eeese2n4j9m5cc3hiug@group.calendar.google.com",
@@ -27,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 {% endblock js %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid">
     <div class="w-75 mx-auto">
         <section id="section-about" class="section-bg py-5 px-3">
             <div class="section-title">
