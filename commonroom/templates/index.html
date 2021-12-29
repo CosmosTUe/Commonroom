@@ -14,15 +14,19 @@ document.addEventListener('DOMContentLoaded', function () {
         //defaultView: $(window).width() < 765 ? 'basicDay':'agendaWeek',
         googleCalendarApiKey: "AIzaSyDmW8ZeKftNzgpFFk38vPNLLJworRO8Gsw",
         eventDidMount: function(info) {
-            console.log("test");
             info.el.setAttribute("data-bs-toggle", "tooltip");
-            info.el.setAttribute("title", info.event.extendedProps.description);
+            info.el.setAttribute("title", info.event.title + "</br></br>" + info.event.extendedProps.description);
             var tooltip = new bootstrap.Tooltip(info.el, {html: true});
         },
         events: {
             googleCalendarId: "c_nhgcso8eeese2n4j9m5cc3hiug@group.calendar.google.com",
             className: 'gcal-event',
         },
+        eventTimeFormat: {
+            hour: '2-digit',
+            minute: '2-digit',
+            meridiem: false,
+        }
     });
     calendar.render();
 });
@@ -60,6 +64,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 <h2>Calendar</h2>
             </div>
             <div id="calendar"></div>
+            <p>
+                To add the commonroom calendar to your own calendar use <a href="https://calendar.google.com/calendar/embed?src=c_nhgcso8eeese2n4j9m5cc3hiug%40group.calendar.google.com&ctz=Europe%2FAmsterdam">this link</a>.
+            </p>
         </section>
     </div>
 </div>
