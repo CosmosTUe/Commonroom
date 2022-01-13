@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 psycopg2 = "*"
 Django = "<4.0"
+gunicorn = "*"
 
 [dev-packages]
 flake8 = "*"
