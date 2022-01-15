@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 psycopg2 = "*"
-Django = "<4.0"
+Django = "<5.0"
 gunicorn = "*"
 
 [dev-packages]
