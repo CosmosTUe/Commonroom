@@ -15,6 +15,7 @@ pep8-naming = "*"
 flake8-isort = "*"
 black = "*"
 tox = "*"
+pre-commit = "*"
 
 [requires]
 python_version = "3.8"
