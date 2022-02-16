@@ -8,10 +8,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        //initialView: 'dayGridMonth',
         initialView: document.documentElement.clientWidth < 765 ? 'listMonth' : 'dayGridMonth',
         aspectRatio: document.documentElement.clientWidth < 765 ? 0.8 : 1.35,
-        //defaultView: $(window).width() < 765 ? 'basicDay':'agendaWeek',
         googleCalendarApiKey: "AIzaSyDmW8ZeKftNzgpFFk38vPNLLJworRO8Gsw",
         eventDidMount: function(info) {
             info.el.setAttribute("data-bs-toggle", "tooltip");
@@ -25,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         eventTimeFormat: {
             hour: '2-digit',
             minute: '2-digit',
-            meridiem: false,
+            hour12: false,
         }
     });
     calendar.render();
