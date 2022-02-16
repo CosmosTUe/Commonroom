@@ -1,5 +1,6 @@
 from django.test import TestCase
 
+
 class SmokeTest(TestCase):
     # Very basic test which verifies that the website still shows stuff
     # As the website is very basic, this should be sufficient to catch any potential
