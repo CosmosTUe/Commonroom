@@ -36,8 +36,6 @@ jobs:
       - name: Move secrets
         run: mv secrets_cr.json.template tests/secrets_cr.json
       - name: Run Tox
-        env:
-          CI: test
         run: |
           pipenv run ./manage.py collectstatic
           pipenv run ./manage.py test
