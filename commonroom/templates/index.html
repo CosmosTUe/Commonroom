@@ -45,27 +45,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     Furthermore, we have a projector with speakers and several board, card and computer games. 
                     We hope to see you around!
                 </p>
+                <p>
+                    The Common Room is managed by the Common Room Committee, we are a group of volunteers that make sure the room is looked after and cared for.
+                </p>
+                <figure class="figure mx-auto d-block" style="max-width: 50%">
+                    <img src="{% static 'commonroom/img/GroupFotoCRCom.jpg' %}" class="figure-img img-fluid rounded">
+                    <figcaption class="figure-caption">from left to right, Geert Hansma (AEGEE board member), Anton Ionov (Treasurer), Coen (Chair), Eduardo Costa Martins (Secretary) and Tudor Macovei (Cosmos board member)</figcaption>
+                </figure>
             </div>
         </section>
-        <section id="section-reservation" class="section-bg py-5 px-3">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Reservation</h2>
-                </div>
-                <p>
-                    The Common Room can be booked by any association for students that wants to host an event.
-                    Events can make use of our facilities, such as a beamer, dining tables and a kitchen.
-                    To make sure we can facilitate everything we only accept reservation requests made 7 days in advance.
-                </p>
-                <p>
-                    For reservation of the Common Room, you can fill in the <a href="{% static 'commonroom/pdf/Booking Request Form.pdf' %}">reservation form</a> and send it to <a href="mailto:info@commonroom.nl">info@commonroom.nl.</a>
-                    Please make sure to have read the <a href="{% static 'commonroom/pdf/Common Room Regulations Externals.pdf' %}">Common Room regulations</a> before submitting your form.
-                    Know that the Common Room is kept open by volunteers and we may not be able to keep the room open at all times!
-                    Booking the common room costs €4 per hour.
-                </p>
-            </div>
-        </section>
-        <section id="section-calendar" class="py-5 px-3">
+        <section id="section-calendar" class="section-bg py-5 px-3">
             <div class="container">
                 <div class="section-title">
                     <h2>Calendar</h2>
@@ -73,6 +62,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div id="calendar"></div>
                 <p>
                     To add the commonroom calendar to your own calendar use <a href="https://calendar.google.com/calendar/embed?src=c_nhgcso8eeese2n4j9m5cc3hiug%40group.calendar.google.com&ctz=Europe%2FAmsterdam">this link</a>.
+                </p>
+            </div>
+        </section>
+        <section id="section-reservation" class="py-5 px-3">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Reservation</h2>
+                </div>
+                <p>
+                    The Common Room can be booked by any association that wants to host an event.
+                    Events can make use of our facilities, such as a projector, dining tables and a kitchen.
+                    To make sure we can facilitate everything we only accept reservation requests made 7 days in advance.
+                </p>
+                <p>
+                    For reservation of the Common Room, you can fill in the <a href="{% static 'commonroom/pdf/Booking Request Form.pdf' %}">reservation form</a> and send it to <a href="mailto:info@commonroom.nl">info@commonroom.nl.</a>
+                    Please make sure to have read the <a href="{% static 'commonroom/pdf/CR Regulations 2023 Abridged.pdf' %}">Common Room regulations</a> before submitting your form.
+                    The Common Room is run and overseen by volunteers. A volunteer needs to be present to keep the Common Room open and we may not always be available.
                 </p>
             </div>
         </section>
