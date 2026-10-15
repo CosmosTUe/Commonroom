@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-psycopg2 = "*"
+psycopg2-binary = "*"
 Django = "<5.0"
 gunicorn = "*"
 tzdata = "*"
@@ -19,4 +19,4 @@ tox = "*"
 pre-commit = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.12"
